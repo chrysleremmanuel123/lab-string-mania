@@ -2,12 +2,11 @@ package testing;
 
 import static org.junit.Assert.assertEquals;
 
+
 import org.junit.Test;
 
-import utility.StringMethod;
-
 public class TestStringMethod {
-	StringMethod sm = new StringMethod();
+	TestStringMethod sm = new TestStringMethod();
 
 	@Test
 	public void testSetInputsMethod() {
@@ -29,7 +28,7 @@ public class TestStringMethod {
 		try {
 			sm.lower("");
 		} catch (IllegalArgumentException e) {
-			// System.out.println("No input is given");
+			 System.out.println("No input is given");
 			e.printStackTrace();
 		}
 	}
@@ -37,13 +36,13 @@ public class TestStringMethod {
 	@Test
 	public void testUpperMethod() {
 		assertEquals("HAI", sm.upper("HAI"));
-		assertEquals("1234", sm.upper("1234"));
+	assertEquals("1234", sm.upper("1234"));
 		assertEquals("HAI&HELLO", sm.upper("hai&HELLO"));
 		assertEquals("WELCOME", sm.upper("welcome"));
 		try {
 			sm.upper("");
 		} catch (IllegalArgumentException e) {
-			// System.out.println("No input is given");
+			 System.out.println("No input is given");
 			e.printStackTrace();
 		}
 	}
@@ -70,22 +69,22 @@ public class TestStringMethod {
 		assertEquals("1", sm.length("."));
 		try {
 			sm.length("");
-		} catch (IllegalArgumentException e) {
-			// System.out.println("No input is given");
-			e.printStackTrace();
-		}
-	}
-
-	@Test
-	public void testTrimMethod() {
-		assertEquals("Java", sm.trim(" Java "));
-		assertEquals("Ja va", sm.trim("Ja va "));
-		assertEquals("Java", sm.trim("  Java  "));
-		try {
-			sm.trim("");
-		} catch (IllegalArgumentException e) {
-			// System.out.println("No input is given");
-			e.printStackTrace();
-		}
-	}
-}
+			} catch (IllegalArgumentException e) {
+//			// System.out.println("No input is given");
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	@Test
+//	public void testTrimMethod() {
+//		assertEquals("Java", sm.trim(" Java "));
+//		assertEquals("Ja va", sm.trim("Ja va "));
+//		assertEquals("Java", sm.trim("  Java  "));
+//		try {
+//			sm.trim("");
+//		} catch (IllegalArgumentException e) {
+//			// System.out.println("No input is given");
+//			e.printStackTrace();
+//		}
+//	}
+//}

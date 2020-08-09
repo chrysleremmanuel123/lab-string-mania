@@ -28,9 +28,9 @@ public class ThirdLevelServlet extends HttpServlet {
 		String indexOf = request.getParameter("indexOf");
 		String seeAnswer = request.getParameter("seeanswer");
 		String end = request.getParameter("end");
-
+StringAdvanceMethod stringadvance  = new StringAdvanceMethod();
 		stringadvance.setInput1(input1);
-		stringadvance.setInput2(input2);
+		stringadvance.setInput1(input2);
 
 		if (seeAnswer != null) {
 			if (concatenation != null) {
@@ -44,8 +44,10 @@ public class ThirdLevelServlet extends HttpServlet {
 
 		if (seeAnswer != null) {
 			if (split != null) {
-				String output = stringadvance.split(input1, input2);
-				request.setAttribute("output", output);
+				String [] output = stringadvance.split(input1, input2);
+				for(int i=0; i<output.length;i++) {
+				request.setAttribute("output", output[i]);
+				}
 				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
 				rd.forward(request, response);
 			}
@@ -54,6 +56,7 @@ public class ThirdLevelServlet extends HttpServlet {
 		if (seeAnswer != null) {
 			if (indexOf != null) {
 				String output = stringadvance.indexOf(input1, input2);
+				System.out.println(output);
 				request.setAttribute("output", output);
 				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
 				rd.forward(request, response);

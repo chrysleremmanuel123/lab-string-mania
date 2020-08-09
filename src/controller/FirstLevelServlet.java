@@ -35,8 +35,7 @@ public class FirstLevelServlet extends HttpServlet {
 		String secondLevel = request.getParameter("secondlevel");
 		String level = request.getParameter("level");
 		String choose = request.getParameter("choose");
-
-		string.setInput(input);
+		StringMethod string = new StringMethod();
 		
 		if (level != null)
 		{
@@ -52,7 +51,7 @@ public class FirstLevelServlet extends HttpServlet {
 		if (seeAnswer != null) {
 			if (lowerCase != null) {
 				String output = string.lower(input);
-				// System.out.println(output);
+				
 				request.setAttribute("output", output);
 				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level1.jsp");
 				rd.forward(request, response);
